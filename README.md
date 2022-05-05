@@ -66,7 +66,7 @@ mvn clean compile -Pupdate-pom
 ```
 
 #### Tip
-You could setup your CICD pipeline to always run this profile whenever e.g. a `feature` branch is created
+You could setup your CICD pipeline to build using this profile whenever e.g. a `feature` branch is created
 
 
 ## License
