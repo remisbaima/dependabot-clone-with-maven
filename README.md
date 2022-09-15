@@ -1,5 +1,5 @@
 # dependabot-clone-with-maven
-If you cannot use GitHub Dependabot for whatever reason, here is a Maven profile which works like a Dependabot clone to help you accomplish the same goal: keep your pom.xml dependencies always up-to-date
+If you cannot use GitHub Dependabot for whatever reason, here is a Maven profile which works like a Dependabot clone to help you accomplish the same goal: keep your `pom.xml` dependencies always up-to-date
 
 
 ## Quick start guide
@@ -24,7 +24,7 @@ If you cannot use GitHub Dependabot for whatever reason, here is a Maven profile
                 <configuration>
                   <executable>mvn</executable>
                   <!-- IMPORTANT: plugins can only be updated if their versions are managed using properties -->
-                  <commandlineArgs>versions:update-parent versions:update-properties versions:use-latest-releases</commandlineArgs>
+                  <commandlineArgs>versions:update-parent versions:update-properties versions:use-latest-releases -DallowMajorUpdates=false</commandlineArgs>
                 </configuration>
               </execution>
               <execution>
