@@ -24,7 +24,7 @@ If you cannot use GitHub Dependabot for whatever reason, here is a Maven profile
                 <configuration>
                   <executable>mvn</executable>
                   <!-- IMPORTANT: plugins can only be updated if their versions are managed using properties -->
-                  <commandlineArgs>versions:update-parent versions:update-properties versions:use-latest-releases -DallowMajorUpdates=false</commandlineArgs>
+                  <commandlineArgs>versions:update-parent versions:update-properties versions:use-latest-releases</commandlineArgs>
                 </configuration>
               </execution>
               <execution>
@@ -65,8 +65,15 @@ If you cannot use GitHub Dependabot for whatever reason, here is a Maven profile
 mvn clean compile -Pupdate-pom
 ```
 
-#### Tip
-You could setup your CICD pipeline to build using this profile whenever e.g. a `feature` branch is created
+#### Tips
+- You can setup your CICD pipeline to build using this profile whenever e.g. a `feature` branch is created
+- You can also add "Optional Parameters" like `-DallowMajorUpdates=false` to the `commandlineArgs` in the `pom.xml` e.g.:
+```xml
+...
+<commandlineArgs>versions:update-parent versions:update-properties versions:use-latest-releases -DallowMajorUpdates=false</commandlineArgs>
+...
+```
+- Check the dodumentation of some "Optional Parameters": https://www.mojohaus.org/versions-maven-plugin/use-latest-releases-mojo.html
 
 
 ## License
